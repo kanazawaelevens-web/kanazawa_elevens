@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CONTACT | 11's BASEBALL</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="images/logo.png" alt="チームロゴ" class="logo">
+    </a>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="team.html">TEAM</a>
+        <a href="players.html">PLAYERS</a>
+        <a href="game.html">GAME</a>
+        <a href="reports.html">REPORTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-hero">
+        <p>GET IN TOUCH</p>
+        <h1>CONTACT</h1>
+        <span>お問い合わせ</span>
+    </section>
+
+    <section class="contact-section">
+
+        <p class="section-label">CONTACT US</p>
+        <h2>CONTACT</h2>
+
+        <p class="contact-description">
+            試合のお申し込みやその他のお問い合わせはこちらから。
+            必要事項をご入力のうえ、送信してください。
+        </p>
+
+        <div class="contact-tabs">
+
+            <button class="contact-tab active"
+                onclick="showForm('game', this)">
+                試合の申し込み
+            </button>
+
+            <button class="contact-tab"
+                onclick="showForm('other', this)">
+                その他お問い合わせ
+            </button>
+
+        </div>
+
+        <!-- 試合申し込み -->
+
+<div class="contact-form" id="game-form">
+
+    <h3>GAME APPLICATION</h3>
+
+    <p class="form-description">
+        試合のお申し込みはこちらからお願いいたします。
+    </p>
+
+    <div class="google-form-wrapper">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfjJ7S68z1AcWU9MhInsg1nYG9a8BdkTC7tJWk1aey-MGrFcg/viewform?embedded=true"
+            width="100%"
+            height="1689"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            読み込んでいます…
+        </iframe>
+    </div>
+
+</div>
+
+
+<!-- その他お問い合わせ -->
+
+<div class="contact-form" id="other-form" hidden>
+
+    <h3>GENERAL INQUIRY</h3>
+
+    <p class="form-description">
+        その他のお問い合わせはこちらからお願いいたします。
+    </p>
+
+    <div class="google-form-wrapper">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdiND0NVcuj8n2Qy3-INvOal0Qw77vG58FI_RsA7mdzLpfv5g/viewform?embedded=true"
+            width="100%"
+            height="1295"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            読み込んでいます…
+        </iframe>
+    </div>
+
+</div>
+
+    </section>
+
+</main>
+
+<script>
+
+function showForm(type, button) {
+
+    document.getElementById('game-form').hidden = type !== 'game';
+
+    document.getElementById('other-form').hidden = type !== 'other';
+
+    document.querySelectorAll('.contact-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+}
+
+</script>
+
+</body>
+</html>
